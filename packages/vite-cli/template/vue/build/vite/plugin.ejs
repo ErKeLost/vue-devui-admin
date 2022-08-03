@@ -1,0 +1,101 @@
+import type { Plugin } from 'vite'
+import vue from "@vitejs/plugin-vue"
+<%- pluginImportStatement %>
+<% if (components === 'vuetify') { -%>
+  import vuetify from 'vite-plugin-vuetify'
+<% } -%>
+
+<% if (plugins.indexOf('vue-components') !== -1) { -%>
+  import {
+    <%- ComponentResolver %>
+   } from "unplugin-vue-components/resolvers"
+<% } -%>
+export function createVitePlugins(viteEnv, isDev: boolean) {
+  const vitePlugins: (Plugin | Plugin[]) = [
+    vue({
+      reactivityTransform: true
+    }),
+    <% if (plugins.indexOf('jsx') !== -1) { -%>
+      VueJsx(),
+    <% } -%>
+    <% if (plugins.indexOf('legacy') !== -1) { -%>
+      legacy({
+        targets: ["ie >= 11"],
+        additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
+      }),
+    <% } -%>
+    <% if (plugins.indexOf('inspect') !== -1) { -%>
+      Inspect(),
+    <% } -%>
+    <% if (plugins.indexOf('vue-components') !== -1) { -%>
+      Components({
+        // allow auto load markdown components under `./src/components/`
+        extensions: ["vue", "md"],
+        // allow auto import and register components used in markdown
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+        dirs: ["src/components/", "src/layout/", "src/views", "src/assets"],
+          resolvers: [
+          // 自动导入图标组件
+            <% if (plugins.indexOf('icons') !== -1) { -%>
+              IconsResolver({
+                prefix: "Icon"
+              }),
+            <% } -%>
+            <% if (components !== 'vuetify') { -%>
+            <%- ComponentResolver %>()
+            <% } -%>
+          ],
+        dts: "src/types/components.d.ts"
+      }),
+    <% } -%>
+    <% if (plugins.indexOf('auto-import') !== -1) { -%>
+      AutoImport({
+        // dts: path.resolve(pathSrc, 'typings', 'auto-imports.d.ts'),
+        dts: "src/types/auto-imports.d.ts",
+        // imports: ['vue', '@vueuse/core'],
+        // Generate corresponding .eslintrc-auto-import.json file.
+        // eslint globals Docs - https://eslint.org/docs/user-guide/configuring/language-options#specifying-globals
+        imports: ["vue", "vue/macros", "vue-router", "pinia", "@vueuse/core"],
+        dirs: ["src/composables", "src/utils"],
+        // Auto import for all module exports under directories
+        // dirs: [
+        //   // './hooks',
+        //   // './composables'
+        //   // ...
+        // ],
+        eslintrc: {
+          // enabled: true, // Default `false`
+          enabled: false, // Default `false`
+          filepath: "./.eslintrc-auto-import.json", // Default `./.eslintrc-auto-import.json`
+          globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+        },
+        // Auto import functions from Element Plus, e.g. ElMessage, ElMessageBox... (with style)
+        // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
+        resolvers: [
+          // Auto import icon components
+          <% if (components !== 'vuetify') { -%>
+            <%- ComponentResolver %>()
+          <% } -%>
+        ]
+      }),
+    <% } -%>
+    <% if (components === 'vuetify') { -%>
+      vuetify({ autoImport: true }),
+    <% } -%>
+    <% if (plugins.indexOf('icons') !== -1) { -%>
+      Icons({
+        compiler: 'vue3',
+        customCollections: {
+          // custom: FileSystemIconLoader(`${vitePath.src}/assets/svg`)
+        },
+        scale: 1,
+        defaultClass: 'inline-block',
+        autoInstall: true
+      }),
+    <% } -%>
+    <% if (plugins.indexOf('unocss') !== -1) { -%>
+      Unocss(),
+    <% } -%>
+  ]
+  return vitePlugins
+}
