@@ -1,6 +1,6 @@
 import { access } from 'fs/promises'
 import { constants } from 'fs'
-import { cyan } from '../utils/log'
+import { cyan } from './log'
 
 export default async function (name: string): Promise<boolean> {
   // access 操作文件异步执行所有操作 不会阻塞事件循环 完成或者 错误时调用回调函数

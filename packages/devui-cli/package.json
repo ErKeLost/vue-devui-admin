@@ -1,6 +1,6 @@
 {
-  "name": "vite-create-app",
-  "version": "0.16.9",
+  "name": "create-vue-devui",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "bin": {
