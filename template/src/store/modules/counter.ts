@@ -1,7 +1,3 @@
-<% if (plugins.indexOf('auto-import') === -1) { -%>
-import { defineStore } from "pinia"
-import { ref } from "vue"
-<% } -%>
 export const useCounterStore = defineStore('useCounterStore', () => {
   const count = ref(1)
   function increment() {
