@@ -10,3 +10,4 @@ dist/
 pnpm-lock.yaml
 packages/devui-cli/template/
 packages/devui-cli/theme/
+template

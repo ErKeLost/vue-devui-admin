@@ -8,9 +8,8 @@ module.exports = {
   extends: [
     'plugin:vue/vue3-essential',
     'plugin:@typescript-eslint/recommended',
-    <% if (Prettier)  {%>
-    'plugin:prettier/recommended'
-    <% } %>,
+
+    'plugin:prettier/recommended',
     'eslint:recommended'
   ],
   parserOptions: {
@@ -20,6 +19,6 @@ module.exports = {
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
-    "vue/multi-word-component-names":"off",
+    'vue/multi-word-component-names': 'off'
   }
 }

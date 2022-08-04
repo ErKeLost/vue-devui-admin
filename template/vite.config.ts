@@ -34,8 +34,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
           javascriptEnabled: true
         }
       },
-      postcss: {
-      }
+      postcss: {}
     },
     plugins: createVitePlugins(viteEnv, isBuild)
   }
