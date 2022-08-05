@@ -9,8 +9,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "build:es": "zx ./scripts/build.mjs",
+    "build": "zx ./scripts/build.mjs",
     "build:cli": "pnpm build --filter devui-cli",
     "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
     "version-packages": "changeset version",
@@ -57,16 +56,6 @@
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"
-    }
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search",
-        "react",
-        "react-dom",
-        "@types/react"
-      ]
     }
   }
 }
