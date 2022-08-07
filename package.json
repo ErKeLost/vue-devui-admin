@@ -57,15 +57,5 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search",
-        "react",
-        "react-dom",
-        "@types/react"
-      ]
-    }
   }
 }
