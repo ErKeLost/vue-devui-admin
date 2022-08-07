@@ -16,7 +16,7 @@ export function createVitePlugins(viteEnv, isDev: boolean) {
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dirs: ['src/components/', 'src/layout/', 'src/views', 'src/assets'],
       resolvers: [
-        // DevUiResolver()
+        DevUiResolver()
       ],
       dts: 'src/types/components.d.ts'
     }),

@@ -1,8 +1,6 @@
 import { createApp } from 'vue'
 import { setupRouter } from '@/router'
 import { setupStore } from '@/store'
-import DevUI from 'vue-devui'
-import 'vue-devui/style.css'
 import {
   setupCustomComponents,
   setupGlobalMethods,
@@ -17,7 +15,6 @@ async function bootStrap() {
   // 创建vue
   const app = createApp(App)
   // 全局加载
-  app.use(DevUI)
   // 注册全局常用的 组件
   setupCustomComponents(app)
 

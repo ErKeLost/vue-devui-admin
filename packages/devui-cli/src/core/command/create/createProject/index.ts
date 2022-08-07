@@ -10,9 +10,9 @@ const gradient = require('gradient-string')
 const path = require('path')
 let startTime: number, endTime: number
 export default async function () {
-  clearConsole('cyan', ``)
+  clearConsole('cyan', `DevUI`)
   console.log(
-    gradient('cyan', 'blue')('\n🚀 Welcome To Create Template for DevUI!\n')
+    gradient('cyan', '#5e7ce0')('\n📦 Welcome To Create Template for DevUI! \n')
   )
 
   await createProjectQuestions()
