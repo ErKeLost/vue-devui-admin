@@ -27,7 +27,7 @@ SOFTWARE.
 await esbuild.build({
   bundle: true,
   entryPoints: ['packages/devui-cli/src/index.ts'],
-  outfile: 'outfile.cjs',
+  outfile: 'packages/devui-cli/outfile.cjs',
   format: 'cjs',
   platform: 'node',
   target: 'node14'

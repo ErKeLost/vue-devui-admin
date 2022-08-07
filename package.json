@@ -1,10 +1,7 @@
 {
-  "name": "create-vue-devui",
+  "name": "devui-cli",
   "version": "0.0.1",
   "private": true,
-  "bin": {
-    "devui": "outfile.cjs"
-  },
   "workspaces": [
     "packages/*"
   ],

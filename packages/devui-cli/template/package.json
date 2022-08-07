@@ -1,0 +1,38 @@
+{
+  "name": "devui-template",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "prettier": "prettier --write ./**/*.{html,vue,ts,js,json,md}"
+  },
+  "dependencies": {
+    "@vueuse/core": "^8.9.1",
+    "@vueuse/head": "^0.7.6",
+    "@types/node": "^16.11.43",
+    "vue-router": "^4.1.1",
+    "vue-devui": "1.0.0-beta.220801",
+    "vue": "^3.2.27",
+    "pinia": "^2.0.14",
+    "pinia-plugin-persist": "^1.0.0"
+  },
+  "devDependencies": {
+    "vite": "^3.0.4",
+    "eslint": "^8.18.0",
+    "eslint-plugin-vue": "^9.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "prettier": "^2.7.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "unplugin-vue-components": "^0.22.0",
+    "unplugin-auto-import": "^0.10.0",
+    "typescript": "^4.7.4",
+    "vue-tsc": "^0.39.0"
+  }
+}

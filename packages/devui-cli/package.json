@@ -1,10 +1,12 @@
 {
-  "name": "devui-cli",
-  "version": "0.0.1",
+  "name": "create-vue-devui",
+  "version": "0.0.5",
   "description": "",
-  "main": "index.js",
+  "bin": {
+    "devui": "outfile.cjs"
+  },
   "scripts": {
-    "build": "tsc && tsc-alias"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -14,13 +16,10 @@
   "bugs": "https://github.com/ErKeLost/vite-cli/issues",
   "dependencies": {
     "commander": "^9.3.0",
-    "ejs": "^3.1.8",
     "fs-extra": "^10.1.0",
     "gradient-string": "^2.0.1",
     "kolorist": "^1.5.1",
-    "prettier": "latest",
-    "prompts": "^2.4.2",
-    "figlet": "^1.5.2"
+    "prompts": "^2.4.2"
   },
   "devDependencies": {
     "@types/node": "^18.0.0"
@@ -30,8 +29,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "dist",
-    "template",
-    "theme"
+    "outfile.cjs",
+    "template"
   ]
 }
