@@ -1,6 +1,6 @@
 {
   "name": "create-vue-devui",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "bin": {
     "devui": "outfile.cjs"
@@ -14,15 +14,13 @@
   "homepage": "https://github.com/ErKeLost/vite-cli#readme",
   "repository": "https://github.com/ErKeLost/vite-cli",
   "bugs": "https://github.com/ErKeLost/vite-cli/issues",
-  "dependencies": {
+  "devDependencies": {
+    "@types/node": "^18.0.0",
     "commander": "^9.3.0",
     "fs-extra": "^10.1.0",
     "gradient-string": "^2.0.1",
     "kolorist": "^1.5.1",
     "prompts": "^2.4.2"
-  },
-  "devDependencies": {
-    "@types/node": "^18.0.0"
   },
   "publishConfig": {
     "access": "public",
