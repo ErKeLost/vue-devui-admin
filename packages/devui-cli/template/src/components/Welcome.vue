@@ -21,10 +21,10 @@ const { count } = storeToRefs(counterStore);
 
       <nav>
         <RouterLink to="/">
-          <d-button variant="solid">Home</d-button>
+          <d-button v-ripple variant="solid">Home</d-button>
         </RouterLink>
         <RouterLink to="/about">
-          <d-button variant="solid">About</d-button>
+          <d-button v-ripple variant="solid">About</d-button>
         </RouterLink>
       </nav>
     </div>
