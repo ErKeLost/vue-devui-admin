@@ -30,8 +30,8 @@ await esbuild.build({
   outfile: 'packages/devui-cli/outfile.cjs',
   format: 'cjs',
   platform: 'node',
-  target: 'node14'
-
+  target: 'node14',
+  treeShaking: true
   // plugins: [
   //   {
   //     name: 'alias',
