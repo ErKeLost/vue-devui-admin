@@ -16,7 +16,6 @@ export default async function () {
   )
 
   await createProjectQuestions()
-  console.log(options.name, '🎨  🎨🎨  🎨')
   // 获取基础参数
   // options.name = name
   options.dest = path.resolve(process.cwd(), options.name)
@@ -26,7 +25,6 @@ export default async function () {
   const cmdInherit = createSpawnCmd(dest, 'inherit')
   // 模板路径
   const templatePath = path.resolve(__dirname, `template`)
-  console.log(templatePath)
 
   // 开始记录用时
   startTime = new Date().getTime()
