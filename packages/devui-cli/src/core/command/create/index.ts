@@ -1,10 +1,16 @@
 import program from '../../program'
-import emptyDirName from '../../../utils/emptyDirName'
 import createProject from './createProject'
 export default async function createCommand() {
   program
-    .description('init Vue3 + Vite3 + Typescript project   📑  📑')
+    .description('📦📦 Init Vue3 + Vite3 + TypeScript + DevUI Project')
+    .action(async () => {
+      createProject()
+    })
+  program
+    .command('create')
+    .description('📦📦 Init Vue3 + Vite3 + TypeScript + DevUI Project')
     .action(async () => {
       createProject()
     })
 }
+

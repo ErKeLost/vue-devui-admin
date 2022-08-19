@@ -1,9 +1,13 @@
 import { cyan, yellow } from '@/utils/log'
 import createSpawnCmd from '@/utils/createSpawnCmd'
 import fs = require('fs-extra')
-import createProjectQuestions from '@/core/questions/creator'
 import clearConsole from '@/utils/clearConsole'
 import options from '@/shared/options'
+import minimist from 'minimist'
+import PackageDevice from '@/core/questions/creator/packageManager'
+import projectName from '@/core/questions/creator/projectName'
+import createQuestion from '@/core/questions/creator'
+import prompts from 'prompts'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const gradient = require('gradient-string')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -52,4 +56,27 @@ export default async function () {
       ? `✨✨ ${options.package} run dev`
       : `✨✨ ${options.package} dev`
   )
+}
+function formatTargetDir(targetDir) {
+  return targetDir?.trim().replace(/\/+$/g, '')
+}
+
+async function createProjectQuestions(): Promise<void> {
+  const argv = minimist(process.argv.slice(2), { string: ['_'] })
+  const cwd = process.cwd()
+  const targetDir = formatTargetDir(argv._[0])
+  // 项目名
+  try {
+    if (targetDir === undefined) {
+      await createQuestion(prompts, projectName)
+    } else {
+      options.name = targetDir
+    }
+    // 包管理器版本
+    await createQuestion(prompts, PackageDevice)
+    // cancel
+  } catch (cancelled) {
+    console.log(cancelled.message)
+    process.exit(1)
+  }
 }
