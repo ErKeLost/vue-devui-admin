@@ -48,7 +48,7 @@ export default async function () {
   await cmdInherit(options.package, ['install'])
   endTime = new Date().getTime()
   const usageTime = (endTime - startTime) / 1000
-  cyan(`> The project has been created successfully Usage time ${usageTime}s`)
+  cyan(`> The Vue-devui Demo Project has been created successfully Usage time ${usageTime}s`)
   console.log('')
   cyan(`✨✨ cd ${options.name}`)
   cyan(
