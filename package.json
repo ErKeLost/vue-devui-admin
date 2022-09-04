@@ -1,5 +1,5 @@
 {
-  "name": "devui-cli",
+  "name": "vue-devui-admin",
   "version": "0.0.1",
   "private": true,
   "workspaces": [
