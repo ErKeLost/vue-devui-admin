@@ -11,6 +11,7 @@
     "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
     "version-packages": "changeset version",
     "dev": "turbo run dev --parallel",
+    "play": "turbo run play --filter=devui-admin",
     "lint": "turbo run lint",
     "lint:fix": "eslint --fix --ext .js .",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
