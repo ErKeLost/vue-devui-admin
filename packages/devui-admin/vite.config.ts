@@ -5,7 +5,7 @@ import Unocss from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { VueUseComponentsResolver } from 'unplugin-vue-components/resolvers'
-
+import { DevUiResolver } from 'unplugin-vue-components/resolvers'
 // https://vitejs.dev/config/
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir)
@@ -45,6 +45,7 @@ export default defineConfig({
         // IconsResolver({
         //   enabledCollections: ['a']
         // }),
+        DevUiResolver(),
         VueUseComponentsResolver()
       ]
     }),

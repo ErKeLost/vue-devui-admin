@@ -13,6 +13,9 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+  <d-button variant="solid" color="primary">Primary</d-button>
+  <d-button color="primary">Primary</d-button>
+  <d-button variant="text" color="primary">Primary</d-button>
   <HelloWorld msg="Vite + Vue" />
 </template>
 
